@@ -1,0 +1,37 @@
+{
+  "name": "dummy-pics",
+  "version": "0.0.1",
+  "description": "Dummy images generator",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "npm run build && node dist/index.js",
+    "tsc:init": "tsc --init",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcgtz/dummy-pics.git"
+  },
+  "keywords": [
+    "dummy",
+    "generator",
+    "images",
+    "placeholders"
+  ],
+  "author": "Vicente Gutiérrez (gtz.rvera@gmail.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vcgtz/dummy-pics/issues"
+  },
+  "homepage": "https://github.com/vcgtz/dummy-pics#readme",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.13.0",
+    "typescript": "^4.9.5"
+  }
+}
