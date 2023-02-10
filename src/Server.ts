@@ -19,6 +19,7 @@ class Server {
   public config (): void {
     this.app.use(cors());
     this.app.use(bodyParser.urlencoded({ extended: false }));
+    this.app.use(bodyParser.json());
 
     // Set up the routes
     this.app.use('/', this.router.getExpressRouter());
