@@ -1,5 +1,7 @@
 import express from 'express';
 import Router from './routes/Router';
+import cors from 'cors';
+import bodyParser from 'body-parser';
 
 class Server {
   private app: express.Application;
@@ -15,6 +17,10 @@ class Server {
   }
 
   public config(): void {
+    this.app.use(cors());
+    this.app.use(bodyParser.urlencoded({ extended: false }));
+
+    // Set up the routes
     this.app.use('/', this.router.getExpressRouter());
   }
 
