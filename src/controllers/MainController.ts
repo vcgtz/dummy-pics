@@ -1,7 +1,7 @@
-import { Request, Response } from 'express';
+import { type Request, type Response } from 'express';
 
 class MainController {
-  public static index(req: Request, res: Response): Response {
+  public static index (req: Request, res: Response): Response {
     return res.send('Hello World!');
   }
 }

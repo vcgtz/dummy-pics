@@ -1,28 +1,27 @@
 import { Router as ExpressRouter } from 'express';
-import MainController from '../controllers/MainController';
 import MainRouter from './MainRouter';
 
 class Router {
   private static router: Router;
-  private expressRouter: ExpressRouter;
+  private readonly expressRouter: ExpressRouter;
 
-  private constructor() {
+  private constructor () {
     this.expressRouter = ExpressRouter();
 
     this.registerRoutes();
   }
 
-  private registerRoutes(): void {
+  private registerRoutes (): void {
     const mainRouter: MainRouter = new MainRouter();
 
     this.expressRouter.use('/', mainRouter.getRouter());
   }
 
-  public getExpressRouter(): ExpressRouter {
+  public getExpressRouter (): ExpressRouter {
     return this.expressRouter;
   }
 
-  public static getInstance(): Router {
+  public static getInstance (): Router {
     if (!this.router) {
       this.router = new Router();
     }
