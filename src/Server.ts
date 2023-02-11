@@ -2,6 +2,8 @@ import express from 'express';
 import Router from './routes/Router';
 import cors from 'cors';
 import bodyParser from 'body-parser';
+import hbs from 'hbs';
+import path from 'path';
 
 class Server {
   private readonly app: express.Application;
@@ -20,6 +22,13 @@ class Server {
     this.app.use(cors());
     this.app.use(bodyParser.urlencoded({ extended: false }));
     this.app.use(bodyParser.json());
+
+    // Set hbs as the view engine
+    this.app.set('views', path.join(__dirname, '/views'));
+    this.app.set('view engine', 'hbs');
+    hbs.registerPartials(path.join(__dirname, '/views/partials'));
+
+    this.app.use(express.static(path.join(__dirname, 'public')));
 
     // Set up the routes
     this.app.use('/', this.router.getExpressRouter());

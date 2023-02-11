@@ -1,8 +1,8 @@
 import { type Request, type Response } from 'express';
 
 class MainController {
-  public static index (req: Request, res: Response): Response {
-    return res.send('Hello World!');
+  public static index (req: Request, res: Response): void {
+    res.render('main/index');
   }
 }
 
