@@ -1,4 +1,5 @@
 import { Router as ExpressRouter } from 'express';
+import DummyImagesRouter from './DummyImagesRouter';
 import MainRouter from './MainRouter';
 
 class Router {
@@ -13,8 +14,10 @@ class Router {
 
   private registerRoutes (): void {
     const mainRouter: MainRouter = new MainRouter();
+    const dummyImagesRouter: DummyImagesRouter = new DummyImagesRouter();
 
     this.expressRouter.use('/', mainRouter.getRouter());
+    this.expressRouter.use('/dummy', dummyImagesRouter.getRouter());
   }
 
   public getExpressRouter (): ExpressRouter {
