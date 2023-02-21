@@ -1,7 +1,28 @@
-{{#> home/header title="Dummy Pics" }}
-{{/home/header}}
+{{#> main/header title="Dummy Pics" }}
+{{/main/header}}
 
-<h1>Dummy pics</h1>
+<header class="container">
+  <div class="row">
+    <h1 class="display-3">Dummy Pics</h1>
+  </div>
+  <div class="row">
+    <p class="fs-4 fw-light">A generator of dummy images for your projects</p>
+  </div>
+</header>
 
-{{#> home/footer}}
-{{/home/footer}}
+<div class="container py-5">
+  <div class="row">
+    <p class="fs-5 fw-light">Just copy the next URL, replace WIDHT and HEIGHT with the size that you need. Also, you can replace COLOR with an hexadecimal code if you want:</p>
+  </div>
+  <div class="row">
+    <p class="font-monospace fs-6 fw-light mb-0">URL:</p>
+    <p class="font-monospace fs-4 fw-light text-body-secondary">http://localhost:3000/dummy?width=<span class="fw-bold text-success">WIDHT</span>&height=<span class="fw-bold text-success">HEIGHT</span>&color=<span class="fw-bold text-success">COLOR</span></p>
+  </div>
+  <div class="row">
+    <p class="font-monospace fs-6 fw-light mb-0">For example:</p>
+    <a href="http://localhost:3000/dummy?width=800&height=600&color=5499C7" target="_blank" class="font-monospace fs-4 fw-light text-decoration-none text-body-secondary">http://localhost:3000/dummy?width=<span class="fw-bold text-success">800</span>&height=<span class="fw-bold text-success">600</span>&color=<span class="fw-bold text-success">5499C7</span></a>
+  </div>
+</div>
+
+{{#> main/footer}}
+{{/main/footer}}
